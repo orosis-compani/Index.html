@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وبسایت شخصی ابوالفضل">
+    <meta name="keywords" content="ادمین, قهرمان, ویلن, خنثی">
+    <meta name="author" content="ابوالفضل">
+    <title>وبسایت ابوالفضل</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-fam
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وبسایت شخصی ابوالفضل">
+    <meta name="keywords" content="ادمین, قهرمان, ویلن, خنثی">
+    <meta name="author" content="ابوالفضل">
+    <title>وبسایت ابوالفضل</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff0000, #0000ff);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .story-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .story-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .story-item h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .story-item p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>به دنیای ابوالفضل خوش آمدید</h1>
+    </header>
+
+    <main>
+        <div class="story-container" id="story-container">
+            <!-- داستان‌ها اینجا نمایش داده می‌شوند -->
+        </div>
+    </main>
+
+    <footer>
+        <p>تمامی حقوق محفوظ است &copy; 2025</p>
+    </footer>
+
+    <script>
+        // بارگذاری فایل JSON و نمایش داستان‌ها
+        window.onload = function() {
+            fetch('stories.json')
+                .then(response => response.json())
+                .then(data => {
+                    const storyContainer = document.getElementById('story-container');
+                    data.forEach(story => {
+                        const storyElement = document.createElement('div');
+                        storyElement.classList.add('story-item');
+                        storyElement.innerHTML = `
+                            <h2>${story.title}</h2>
+                            <p>${story.content}</p>
+                        `;
+                        storyContainer.appendChild(storyElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading stories:', error);
+                });
+        };
+    </script>
+
+</body>
+</html>
